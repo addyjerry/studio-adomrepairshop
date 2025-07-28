@@ -1,6 +1,6 @@
+import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
@@ -14,5 +14,11 @@ export default defineConfig({
 
   schema: {
     types: schemaTypes,
+  },
+  cors: {
+    origins: [
+      'http://localhost:3000', // keep for local development
+      'https://adomrepairshop.netlify.app/', // your deployed site
+    ],
   },
 })
